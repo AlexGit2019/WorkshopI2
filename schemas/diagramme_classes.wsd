@@ -1,0 +1,12 @@
+@startuml
+class Site {
+ String libellé
+}
+class Chaine {
+  Integer numero
+}
+class Machine {
+}
+Site "1" *-- "many" Chaine : contains
+Chaine "1" *-- "many" Machine: contains
+@enduml

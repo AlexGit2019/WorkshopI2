@@ -1,0 +1,21 @@
+@startuml
+actor :Utilisateur sur site: as US
+actor :Direction globale: as DG
+actor :Directeur de site: as DS
+actor :Responsable de production: as RP
+actor :Technicien de maintenance: as TM
+US <|-- DS
+US <|-- RP
+US <|-- TM
+
+usecase "Accéder à la consommation d'une machine" as CM
+usecase "Accéder à la consommation d'une chaine" as CC
+usecase "Accéder à la consommation d'un site" as CS
+usecase "Recevoir une alerte" as RA
+RP --> CC
+DG --> CS
+TM --> CM
+RP --> CM
+US --> CS
+US --> RA
+@enduml
