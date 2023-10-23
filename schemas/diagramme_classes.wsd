@@ -1,12 +1,24 @@
 @startuml
 class Site {
+ Integer numero
  String libellé
 }
 class Chaine {
   Integer numero
 }
 class Machine {
+  Integer numero
 }
-Site "1" *-- "many" Chaine : contains
-Chaine "1" *-- "many" Machine: contains
+class Modele {
+    String nom
+    Float consommation_electrique_normale
+}
+class Releve {
+ ZonedDateTime dateReleve
+ Float consommation_electrique
+}
+Site "1" *-- "*" Chaine : contient
+Chaine "1" *-- "*" Machine: contient
+Machine "*" *-- "1" Modele: contient
+Machine "1" *-- "*" Releve: contient
 @enduml
