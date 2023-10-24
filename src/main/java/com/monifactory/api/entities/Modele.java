@@ -11,6 +11,7 @@ public class Modele {
     private int id;
     private String libelle;
     @OneToMany
+    @JoinColumn(name = "id_modele", referencedColumnName = "id")
     private List<ConsommationNormale> consommationNormale;
 
     public int getId() {

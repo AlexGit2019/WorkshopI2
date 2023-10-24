@@ -1,6 +1,9 @@
 spring:
   application.name: "API"
+  jpa:
+    generate-ddl: true
+    hibernate.ddl-auto: "create-drop"
   datasource:
-    url: 
-    username: ${PG_USER}
-    password: ${PG_PASS}
+    url: "jdbc:postgresql://localhost:5432/workshop_i2"
+    username: "postgres"
+    password: "*lqR0&>>sQ$42>j3"

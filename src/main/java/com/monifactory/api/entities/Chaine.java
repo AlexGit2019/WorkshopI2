@@ -1,9 +1,6 @@
 package com.monifactory.api.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.util.List;
 
@@ -14,6 +11,7 @@ public class Chaine {
     private int id;
     private String libelle;
     @OneToMany
+    @JoinColumn(name = "id_chaine", referencedColumnName = "id")
     private List<Machine> machines;
 
     public int getId() {

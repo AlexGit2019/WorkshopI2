@@ -10,8 +10,10 @@ public class Machine {
     @Id
     private int id;
     @ManyToOne
+    @JoinColumn(name = "id_modele", referencedColumnName = "id")
     private Modele modele;
     @OneToMany
+    @JoinColumn(name = "id_machine", referencedColumnName = "id")
     private List<Releve> releves;
 
     public int getId() {

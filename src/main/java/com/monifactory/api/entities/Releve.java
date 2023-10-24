@@ -1,9 +1,6 @@
 package com.monifactory.api.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.time.ZonedDateTime;
 
@@ -13,6 +10,7 @@ public class Releve {
     @Id
     private int id;
     @ManyToOne
+    @JoinColumn(name = "id_type", referencedColumnName = "id")
     private Type type;
     private ZonedDateTime dateReleve;
     private Float conso;
