@@ -1,7 +1,7 @@
 @startuml
 class Site {
- Integer numero
- String libellé
+  Integer numero
+  String libellé
 }
 class Chaine {
   Integer numero
@@ -10,15 +10,31 @@ class Machine {
   Integer numero
 }
 class Modele {
-    String nom
-    Float consommation_electrique_normale
+  int id
+  String nom
+  Float consommation_electrique_normale
 }
 class Releve {
- ZonedDateTime dateReleve
- Float consommation_electrique
+  int id
+  ZonedDateTime dateReleve
+  Float conso
 }
+class ConsommationNormale {
+  int id
+  String description
+  Float conso
+}
+class Type {
+  int id
+  String description
+  String unite
+}
+
 Site "1" *-- "*" Chaine : contient
 Chaine "1" *-- "*" Machine: contient
 Machine "*" *-- "1" Modele: contient
 Machine "1" *-- "*" Releve: contient
+Releve "*" *-- "1" Type: contient
+ConsommationNormale "*" *-- "1" Type: a un
+Modele "1" *-- "1" ConsommationNormale: associé à
 @enduml
