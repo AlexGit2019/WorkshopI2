@@ -1,12 +1,12 @@
-package com.monifactory.api.entities;
+package com.monifactory.api.infrastructure.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+
 @Entity
-@Table(name="Type")
+@Table(name="type_conso")
 public class Type {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
     String description;
     String unite;

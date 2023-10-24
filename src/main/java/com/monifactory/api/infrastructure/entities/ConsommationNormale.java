@@ -1,13 +1,12 @@
-package com.monifactory.api.entities;
+package com.monifactory.api.infrastructure.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+
 @Entity
 @Table(name="ConsommationNormale")
 public class ConsommationNormale {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String description;
     private Float conso;

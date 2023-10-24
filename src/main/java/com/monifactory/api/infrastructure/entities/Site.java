@@ -1,14 +1,12 @@
-package com.monifactory.api.entities;
+package com.monifactory.api.infrastructure.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 
 import java.util.List;
 @Entity
 public class Site {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String libelle;
     @OneToMany

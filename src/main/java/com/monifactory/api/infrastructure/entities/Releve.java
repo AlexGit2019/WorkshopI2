@@ -1,4 +1,4 @@
-package com.monifactory.api.entities;
+package com.monifactory.api.infrastructure.entities;
 
 import jakarta.persistence.*;
 
@@ -8,6 +8,7 @@ import java.time.ZonedDateTime;
 @Table(name = "Releve")
 public class Releve {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @ManyToOne
     @JoinColumn(name = "id_type", referencedColumnName = "id")
