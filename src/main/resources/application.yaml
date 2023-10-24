@@ -1,0 +1,6 @@
+spring:
+  application.name: "API"
+  datasource:
+    url: 
+    username: ${PG_USER}
+    password: ${PG_PASS}
