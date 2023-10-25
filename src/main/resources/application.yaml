@@ -6,6 +6,6 @@ spring:
     hibernate.ddl-auto: "create"
     defer-datasource-initialization: true
   datasource:
-    url: "jdbc:postgresql://localhost:5432/workshop_i2"
+    url: "jdbc:postgresql://78.123.112.242:5432/workshop_i2"
     username: "postgres"
     password: "*lqR0&>>sQ$42>j3"
