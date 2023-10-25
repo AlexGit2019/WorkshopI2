@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "chaine")
 public class Chaine {
@@ -12,6 +14,7 @@ public class Chaine {
     private int id;
     private String libelle;
     
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "id_site", referencedColumnName = "id")
     private Site site;
