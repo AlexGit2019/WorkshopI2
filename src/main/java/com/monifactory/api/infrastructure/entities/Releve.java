@@ -2,6 +2,7 @@ package com.monifactory.api.infrastructure.entities;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
 import java.time.ZonedDateTime;
 
 @Entity
@@ -14,6 +15,10 @@ public class Releve {
     @JoinColumn(name = "id_type", referencedColumnName = "id")
     private Type type;
     private ZonedDateTime dateReleve;
+    
+    private LocalDate dateTheorique;
+    private short heureTheorique;
+    private short minutesTheoriques;
     private Float conso;
 
     public int getId() {
@@ -51,4 +56,27 @@ public class Releve {
         this.conso = conso;
         return this;
     }
+    public LocalDate getDateTheorique() {
+        return dateTheorique;
+    }
+
+    public void setDateTheorique(LocalDate dateTheorique) {
+        this.dateTheorique = dateTheorique;
+    }
+    
+    public short getHeureTheorique() {
+        return heureTheorique;
+    }
+
+    public void setHeureTheorique(short heureTheorique) {
+        this.heureTheorique = heureTheorique;
+    }
+    public short getMinutesTheoriques() {
+        return minutesTheoriques;
+    }
+
+    public void setMinutesTheoriques(short minutesTheoriques) {
+        this.minutesTheoriques = minutesTheoriques;
+    }
+
 }

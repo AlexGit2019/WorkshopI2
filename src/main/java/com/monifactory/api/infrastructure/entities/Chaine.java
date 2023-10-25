@@ -11,8 +11,12 @@ public class Chaine {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String libelle;
-    @OneToMany
-    @JoinColumn(name = "id_chaine", referencedColumnName = "id")
+    
+    @ManyToOne
+    @JoinColumn(name = "id_site", referencedColumnName = "id")
+    private Site site;
+
+    @OneToMany(mappedBy = "chaine")
     private List<Machine> machines;
 
     public int getId() {
@@ -26,6 +30,13 @@ public class Chaine {
 
     public String getLibelle() {
         return libelle;
+    }
+    public Site getSite() {
+        return site;
+    }
+
+    public void setSite(Site site) {
+        this.site = site;
     }
 
     public Chaine setLibelle(String libelle) {

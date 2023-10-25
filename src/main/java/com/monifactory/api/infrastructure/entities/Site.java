@@ -7,10 +7,10 @@ import java.util.List;
 public class Site {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
     private String libelle;
-    @OneToMany
-    @JoinColumn(name = "id_site", referencedColumnName = "id")
+    
+    @OneToMany(mappedBy = "site")
     private List<Chaine> chaines;
 
     public int getId() {

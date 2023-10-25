@@ -1,8 +1,10 @@
 spring:
   application.name: "API"
+  sql.init.mode: always
   jpa:
     generate-ddl: true
-    hibernate.ddl-auto: "create-drop"
+    hibernate.ddl-auto: "create"
+    defer-datasource-initialization: true
   datasource:
     url: "jdbc:postgresql://localhost:5432/workshop_i2"
     username: "postgres"

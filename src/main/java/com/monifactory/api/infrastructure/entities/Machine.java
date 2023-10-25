@@ -9,13 +9,18 @@ import java.util.List;
 public class Machine {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
     @ManyToOne
     @JoinColumn(name = "id_modele", referencedColumnName = "id")
     private Modele modele;
+    
     @OneToMany
     @JoinColumn(name = "id_machine", referencedColumnName = "id")
     private List<Releve> releves;
+
+    @ManyToOne
+    @JoinColumn(name = "id_chaine")
+    private Chaine chaine;
 
     public int getId() {
         return id;
