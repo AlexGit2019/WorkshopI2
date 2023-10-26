@@ -18,8 +18,26 @@ public class Releve {
     
     private LocalDate dateTheorique;
     private short heureTheorique;
-    private short minutesTheoriques;
+    private short minuteTheorique;
     private Float conso;
+
+    @ManyToOne
+    @JoinColumn(name = "id_machine", referencedColumnName = "id")
+    private Machine machine;
+
+    public Releve() {
+    }
+
+    public Releve(int id, Type type, ZonedDateTime dateReleve, LocalDate dateTheorique, short heureTheorique,
+            short minuteTheorique, Float conso) {
+        this.id = id;
+        this.type = type;
+        this.dateReleve = dateReleve;
+        this.dateTheorique = dateTheorique;
+        this.heureTheorique = heureTheorique;
+        this.minuteTheorique = minuteTheorique;
+        this.conso = conso;
+    }
 
     public int getId() {
         return id;
@@ -71,12 +89,12 @@ public class Releve {
     public void setHeureTheorique(short heureTheorique) {
         this.heureTheorique = heureTheorique;
     }
-    public short getMinutesTheoriques() {
-        return minutesTheoriques;
+    public short getMinuteTheorique() {
+        return minuteTheorique;
     }
 
-    public void setMinutesTheoriques(short minutesTheoriques) {
-        this.minutesTheoriques = minutesTheoriques;
+    public void setMinuteTheorique(short minutesTheoriques) {
+        this.minuteTheorique = minutesTheoriques;
     }
 
 }
